@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% load fresh_static %}
+
+{% block title %}Blog by Ask Company{% endblock %}
+
+{% block extra_head %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% fresh_static "blog/blog.css" %}" />
+{% endblock %}
+
+{% block extra_body %}
+    {{ block.super }}
+{% endblock %}
