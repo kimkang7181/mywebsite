@@ -22,8 +22,9 @@ from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('blog/', include('blog.urls')),
-    path('shop/', include('shop.urls')),
+    path('blog/', include(('blog.urls','blog'), namespace='blog')),
+    path('shop/', include(('shop.urls', 'shop'), namespace='shop')),
+    path('accounts/', include(('accounts.urls','shop'), namespace='accounts')),
     path('', RedirectView.as_view(pattern_name='shop:item_list'), name='root'),
 ]
 

@@ -1,0 +1,54 @@
+                .heading{
+                        width:100%;
+                }
+                .bodys{
+                        padding-top:10px;
+                        padding-bottom:30px;
+                }
+                .navbar-default{
+                        background-color:black;
+                }
+                .navbar-default .navbar-brand{
+                        color:white;
+                }
+                .navbar-default .navbar-nav > .active >a,
+                .navbar-default .navbar-nav > .active >a:hover,
+                .navbar-default .navbar-nav > .active >a:focus{
+                        color:black;
+                        background-color:white;
+                }
+                .navbar-default .navbar-nav > .open >a,
+                .navbar-default .navbar-nav > .open >a:hover,
+                .navbar-default .navbar-nav > .open >a:focus{
+                        background-color:white;
+                }
+                .navbar-default .navbar-nav > li >a:hover,
+                .navbar-default .navbar-nav > li >a:focus{
+                        color: white;
+                }
+                @media(min-width:767px){
+                        .navbar-default .navbar-nav .open .dropdown-menu >li>a{
+                                color: black;
+                        }
+                }
+                .dropdown{
+                        background-color:black;
+                }
+                .dropdown > a,
+                .dropdown > a:hover,
+                .dropdown > a:focus{
+                        background-color:white;
+                        color:black;
+                }
+                footer > .container > .row > .col-sm-2 > h5{
+                        font-weight:bold;
+                        text-align:center;
+                }
+                .navbar-default .navbar-collapse, .navbar-default .navbar-form{
+                        border-color:black;
+                }
+                .modal-body{
+                        text-align: center;
+                        color:black;
+                        text-decoration:none;
+                }
