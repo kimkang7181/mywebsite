@@ -2,6 +2,8 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.core.validators import validate_email
 from .models import User, Profile
+from django.contrib.auth.forms import AuthenticationForm
+import unicodedata
 
 
 class SignupForm(UserCreationForm):
@@ -45,3 +47,17 @@ class ProfileForm(forms.ModelForm):
         model = Profile
         fields = ['bio', 'website_url']
 
+class UsernameField(forms.CharField):
+    def to_python(self, value):
+        return unicodedata.normalize('NFKC', super().to_python(value))
+
+class LoginForm(AuthenticationForm):
+    username = UsernameField(
+        label= 'Email',
+        widget=forms.TextInput(attrs={'autofocus': True,  'class':'form-control', 'placeholder':'Your Email', 'requidred':True, 'style':'margin-top:20px; margin-bottom: 10px;'})
+    )
+    password = forms.CharField(
+        label= "Password",
+        strip=False,
+        widget=forms.PasswordInput(attrs={'class':'form-control', 'id':'upw', 'placeholder':'Password', 'required': True}),
+    )
